@@ -3,5 +3,13 @@ query RunInput {
     lines {
       quantity
     }
+    buyerIdentity {
+      customer {
+        email
+      }
+    }
+  }
+  localization {
+    language
   }
 }

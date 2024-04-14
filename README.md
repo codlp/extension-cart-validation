@@ -2,9 +2,13 @@
 
 This Shopify application is an extension-only application, meaning it does not have its own page in the Shopify admin.
 
-## Concept
+## Features
 
-This Shopify application prevents the user from adding more than 2 quantity of the same product variant in their cart.
+This Shopify application contains the following features:
+
+- Logged in users can't add more than 3 items of the same product variant to their cart.
+- Non logged in users can't add more than 1 item of the same product variant to their cart.
+- Localization of the error message.
 
 ## Getting started
 

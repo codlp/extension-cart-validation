@@ -1,0 +1,5 @@
+{
+    "name": "Validation de panier",
+    "description": "Les utilisateurs connectés ne peuvent pas commander plus de 3 articles de la même variante de produit. Et les utilisateurs non connectés ne peuvent pas commander plus d’un article de la même variante de produit.",
+    "message": "Vous ne pouvez pas en commander davantage."
+}

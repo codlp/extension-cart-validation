@@ -4,6 +4,7 @@ api_version = "2024-01"
 handle = "cart-checkout-validation"
 name = "t:name"
 description = "t:description"
+message = "t:message"
 type = "function"
 
   [[extensions.targeting]]
