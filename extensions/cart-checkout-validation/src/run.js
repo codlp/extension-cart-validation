@@ -11,8 +11,8 @@
  */
 export function run(input) {
   const currentBuyerEmail = input.cart.buyerIdentity?.customer?.email;
-  // const locale = input.localization?.locale;
-
+  const locale = input.localization?.language.isoCode;
+  
   const errors = input.cart.lines
     .filter(({ quantity }) => {
       if (currentBuyerEmail && quantity > 3) {
@@ -22,12 +22,12 @@ export function run(input) {
       }
     })
     .map(() => ({
-      localizedMessage: "No more than 3 items can be purchased at a time.",
+      localizedMessage: 'You can only buy 3 items at a time.',
       target: "cart",
     }));
 
     console.log('currentBuyerEmail', currentBuyerEmail);
-    // console.log('locale', locale);
+    console.log('locale', locale);
   return {
     errors
   }

@@ -10,6 +10,8 @@ query RunInput {
     }
   }
   localization {
-    language
+    language {
+      isoCode
+    }
   }
 }
