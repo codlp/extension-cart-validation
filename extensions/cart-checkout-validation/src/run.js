@@ -1,3 +1,6 @@
+import en from "../locales/en.default.json";
+import fr from "../locales/fr.json";
+
 // @ts-check
 
 /**
@@ -11,8 +14,9 @@
  */
 export function run(input) {
   const currentBuyerEmail = input.cart.buyerIdentity?.customer?.email;
-  const locale = input.localization?.language.isoCode;
-  
+  const locale = input.localization?.language.isoCode.toLowerCase();
+  const lang = { "en": en, "fr": fr };
+
   const errors = input.cart.lines
     .filter(({ quantity }) => {
       if (currentBuyerEmail && quantity > 3) {
@@ -22,12 +26,10 @@ export function run(input) {
       }
     })
     .map(() => ({
-      localizedMessage: 'You can only buy 3 items at a time.',
+      localizedMessage: lang[locale].message,
       target: "cart",
     }));
 
-    console.log('currentBuyerEmail', currentBuyerEmail);
-    console.log('locale', locale);
   return {
     errors
   }
