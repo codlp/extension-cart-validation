@@ -11,27 +11,16 @@ This Shopify application contains the following features:
 - Localization of the error message (English and French)
 - No coding required the update the rule: the maximum amount of items can be updated by the merchant, using a metafield on the Shop model.
 
-## Getting started
+## Running this application
 
-### Requirements
+To run this application locally:
 
-1. [Download and install Node.js](https://nodejs.org/en/download/).
-1. [Create a Shopify partner account](https://partners.shopify.com/signup).
-1. Create a store for testing, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
-
-### Steps
-
-Once the application is installed on your development store, launch your app server:
-```shell
-npm run dev
-```
-
-And activate the application:
-Settings > Checkout > Checkout rules > Add rules > [NAME_OF_YOUR_APP] > Save > Turn on.
+1. Clone the repository.
+1. Follow Shopify's [Work on an existing app tutorial](https://shopify.dev/docs/apps/tools/cli/existing) to install the project dependencies and preview the app.
+1. Activate the app's checkout rule on your store. Go to your Shopify admin > Settings > Checkout > Checkout rules > Add rules > [NAME_OF_YOUR_APP] > Save > Turn on.
 
 ## Developer resources
 
 - [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
-- [App authentication](https://shopify.dev/docs/apps/auth)
+- [Extension-only apps](https://shopify.dev/docs/apps/app-extensions/extension-only-apps)
 - [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
-- [Shopify API Library documentation](https://github.com/Shopify/shopify-api-js#readme)
