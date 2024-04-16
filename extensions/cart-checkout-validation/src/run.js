@@ -14,7 +14,7 @@ import fr from "../locales/fr.json";
  */
 export function run(input) {
   const currentBuyerEmail = input.cart.buyerIdentity?.customer?.email;
-  const locale = input.localization?.language.isoCode.toLowerCase();
+  const locale = (input.localization?.language.isoCode || 'en').toLowerCase();
   const lang = { "en": en, "fr": fr };
   const configMetafield = JSON.parse(input.shop.metafield.value);
   const loggedInMaxQuantity = configMetafield?.loggedInMaxQuantity;
