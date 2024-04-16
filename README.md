@@ -6,9 +6,10 @@ This Shopify application is an extension-only application, meaning it does not h
 
 This Shopify application contains the following features:
 
-- Logged in users can't add more than 3 items of the same product variant to their cart.
-- Non logged in users can't add more than 1 item of the same product variant to their cart.
-- Localization of the error message.
+- General rule for non logged in users: they can't add more than 2 items of the same product variant to their cart.
+- Special rule for logged in users: they can't add more than 5 items of the same product variant to their cart.
+- Localization of the error message (English and French)
+- No coding required the update the rule: the maximum amount of items can be updated by the merchant, using a metafield on the Shop model.
 
 ## Getting started
 
