@@ -17,8 +17,8 @@ export function run(input) {
   const locale = (input.localization?.language.isoCode || 'en').toLowerCase();
   const lang = { "en": en, "fr": fr };
   const configMetafield = JSON.parse(input.shop.metafield.value);
-  const loggedInMaxQuantity = configMetafield?.loggedInMaxQuantity;
-  const loggedOutMaxQuantity = configMetafield?.loggedOutMaxQuantity;
+  const loggedInMaxQuantity = configMetafield?.loggedInMaxQuantity || 5;
+  const loggedOutMaxQuantity = configMetafield?.loggedOutMaxQuantity || 2;
   const maxAmount = currentBuyerEmail ? loggedInMaxQuantity : loggedOutMaxQuantity;
 
   const errors = input.cart.lines
