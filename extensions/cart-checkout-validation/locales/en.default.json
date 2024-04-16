@@ -1,5 +1,5 @@
 {
   "name": "Cart Checkout Validation",
   "description": "Logged in users can't order more than 3 items of the same product variant. And not logged in users can't order more than 1 item of the same product variant.",
-  "message": "Not possible to order more."
+  "message": "Not possible to order more than {{ maxAmount }}."
 }

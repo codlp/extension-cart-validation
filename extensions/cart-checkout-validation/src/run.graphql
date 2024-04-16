@@ -14,4 +14,10 @@ query RunInput {
       isoCode
     }
   }
+  shop {
+    metafield(namespace: "cart-checkout-validation", key: "config") {
+      type
+      value
+    }
+  }
 }
