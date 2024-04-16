@@ -17,28 +17,16 @@ export function run(input) {
   const locale = input.localization?.language.isoCode.toLowerCase();
   const lang = { "en": en, "fr": fr };
   const configMetafield = JSON.parse(input.shop.metafield.value);
-  const LoggedInMaxQuantity = configMetafield?.LoggedInMaxQuantity;
-  const LoggedOutMaxQuantity = configMetafield?.LoggedOutMaxQuantity;
-  let maxAmount;
+  const loggedInMaxQuantity = configMetafield?.loggedInMaxQuantity;
+  const loggedOutMaxQuantity = configMetafield?.loggedOutMaxQuantity;
+  const maxAmount = currentBuyerEmail ? loggedInMaxQuantity : loggedOutMaxQuantity;
 
   const errors = input.cart.lines
-    .filter(({ quantity }) => {
-      if (currentBuyerEmail) {
-        maxAmount = LoggedInMaxQuantity;
-        if (quantity > maxAmount) {
-          return true;
-        }
-      } else {
-        maxAmount = LoggedOutMaxQuantity;
-        if (quantity > maxAmount) {
-          return true;
-        }
-      }
-    })
-    .map(() => ({
-      localizedMessage: lang[locale].message.replace("{{ maxAmount }}", maxAmount),
-      target: "cart",
-    }));
+  .filter(({ quantity }) => quantity > maxAmount)
+  .map(() => ({
+    localizedMessage: lang[locale].message.replace("{{ maxAmount }}", maxAmount),
+    target: "cart",
+  }));
 
   return {
     errors
